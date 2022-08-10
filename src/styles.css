@@ -70,7 +70,6 @@ input {
   font-size: 15px;
 }
 
-
 .checkbox {
   margin-right: 10px;
   margin-bottom: 15px;
@@ -98,6 +97,7 @@ justify-items: end;
 margin-bottom:15px ;
 margin-left: 290px;
 }
+
 .task-list{
     display: flex;
   justify-content: space-around;

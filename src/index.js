@@ -17,7 +17,6 @@ const tasks = [
     index: 2,
   },
 ];
-
 const toDoList = (tasks) => {
   for (let i = 0; i < tasks.length; i += 1) {
     const list = document.querySelector('.list');
