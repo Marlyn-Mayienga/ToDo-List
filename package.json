@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-        "start": "webpack serve --open 'google-chrome'",
+        "start": "webpack serve --open",
         "watch": "webpack --watch",
         "prod": "NODE_ENV=production webpack",
         "dev": "webpack",
