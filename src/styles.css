@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color1: rgb(240,240,240);
+  --color1: rgb(240, 240, 240);
   --text-color: rgb(67, 68, 68);
 }
 
@@ -83,23 +83,23 @@ input {
   width: 100%;
   padding: 15px 0;
   border: none;
-  font-family: 'lato';
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
   font-weight: 100;
   font-size: 16px;
   color: var(--text-color);
   cursor: pointer;
-  background-color: #FF99FF;
+  background-color: #f9f;
 }
 
-.fa-ellipsis-v{
-display: flex;
-justify-items: end;
-margin-bottom:15px ;
-margin-left: 290px;
+.fa-ellipsis-v {
+  display: flex;
+  justify-items: end;
+  margin-bottom: 15px;
+  margin-left: 290px;
 }
 
-.task-list{
-    display: flex;
+.task-list {
+  display: flex;
   justify-content: space-around;
   letter-spacing: 1px;
 }

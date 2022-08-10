@@ -15,5 +15,3 @@ module.exports = {
     clean: true,
   },
 };
-
-
