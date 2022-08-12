@@ -3,6 +3,8 @@ import Task, { getTask, updateTaskCompletion } from './modules/task.js';
 import TaskStore from './modules/taskstore.js';
 
 const getTasks = () => {
+  const list = document.querySelector('.list');
+  list.replaceChildren();
   TaskStore.getTasks().forEach((task) => getTask(task));
 };
 
@@ -70,8 +72,12 @@ document.querySelector('.list').addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-trash-alt')) {
     const { index } = e.target.parentElement.firstChild.dataset;
     const item = document.getElementById(`item-${index}`);
+
     TaskStore.removeTask(index);
+
     item.remove();
+
+    getTasks();
   }
 });
 
