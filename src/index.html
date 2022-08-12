@@ -11,11 +11,11 @@
       crossorigin="anonymous"
     />
     <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
     <link
       href="https://fonts.googleapis.com/css?family=Lato"
       rel="stylesheet"
@@ -37,17 +37,15 @@
     <h1>To-Do List</h1>
 
     <div class="list-container">
-      <ul class="list">
-        <li class="list-header">Today's To Do <i class="fas fa-sync"></i></li>
-        <li class="list-input"><input type="text" placeholder="Add to your list..." id="add-input"></li>
-  
-        <li class="item">
-          <input type="checkbox" class="checkbox">
-          <p class="task-list">Do the laundry</p>
-          <i class="fas fa-ellipsis-v item-action"></i>
-        </li>
-      </ul>
-      <button type="button" class="clear-button">Clear all completed</button>
+        <p class="list-header">Today's To Do <span><i class="fa fa-sync reset-button"></i></span></p>
+
+        <form class="task-form">
+          <input type="text" placeholder="Add to your list..." class="add-input" id="add-input" required>
+          <button type="submit" class="submit-button"><i class="fa fa-arrow-right submit-icon"></i></button>
+        </form>
+    
+        <ul class="list"> </ul>
+        <button type="button" class="clear-button">Clear all completed</button>
   
     </div>
    </main>
