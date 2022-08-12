@@ -105,50 +105,50 @@ input {
 }
 
 .editing {
-    background-color: rgb(166, 245, 166);
-  }
-  
-  .done {
-    text-decoration: line-through 2px;
-    text-decoration-color: green;
-  }
-  
-  .item-checked {
-    background-color: rgb(255, 255, 213);
-  }
-  
-  .disabled {
-    display: none;
-  }
+  background-color: rgb(166, 245, 166);
+}
 
-  .edit-input {
-    padding: 2px;
-    font-size: 16px;
-  }
-  
-  .item-dots {
-    margin-left: auto;
-    cursor: move;
-  }
-  
-  .item-trash {
-    margin-left: auto;
-    cursor: pointer;
-  }
+.done {
+  text-decoration: line-through 2px;
+  text-decoration-color: green;
+}
 
-  .submit-button {
-    border: none;
-    background: none;
-  }
+.item-checked {
+  background-color: rgb(255, 255, 213);
+}
 
-  .task-form {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 10px;
-    border-bottom: var(--color1) solid 1px;
-  }
-  
-  .item-trash:hover{
-    cursor: pointer;
-  }
+.disabled {
+  display: none;
+}
+
+.edit-input {
+  padding: 2px;
+  font-size: 16px;
+}
+
+.item-dots {
+  margin-left: auto;
+  cursor: move;
+}
+
+.item-trash {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.submit-button {
+  border: none;
+  background: none;
+}
+
+.task-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: var(--color1) solid 1px;
+}
+
+.item-trash:hover {
+  cursor: pointer;
+}
