@@ -1,26 +1,23 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Historia Website
+# TODO-LIST
 
-> This website shows the program and history of the National museum in Kenya - Historia Mamboleo Museum. There are different specialists talking about the world of art and the different program segments for the day. The sponsors for the event have also been mentioned. 
+> This website showcases a to-do list template where one can add, remove, edit and complete different tasks.
 
-The website can be viewed on a desktop or a small screen size device.
-This is the recording with the description of my Historia Summit website: https://www.loom.com/share/32ba788daa1d42afb941180eb3c243d1
 
 ## Built With
 - HTML
 - CSS
 - JavaScript
 
-## Live Demo (if available)
-
-[Live Demo Link](https://marlyn-mayienga.github.io/Historia_Website/)
+## Live Demo 
+[Live Demo Link](https://marlyn-mayienga.github.io/ToDo-List/)
 
 
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
-Run this code to set it up on you local computer: https://github.com/Marlyn-Mayienga/Historia_Website.git
+Run this code to set it up on you local computer: https://github.com/Marlyn-Mayienga/ToDo-List
 
 ### Prerequisites
 You need to have a code editor to be able to run the commands in the terminal. VSCode is most preferred.
@@ -32,7 +29,7 @@ You need to download the linters folder and copy it to your project.
 You need to install the linters and the fontawesome library. (Preferred)
 
 ### Deployment
-The project was deployed to Github pages at . 
+The project was deployed to Github pages at https://marlyn-mayienga.github.io/ToDo-List/ . 
 
 ## Authors
 
