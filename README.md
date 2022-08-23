@@ -1,56 +1,46 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Historia Website
 
-> Description the project.
+> This website shows the program and history of the National museum in Kenya - Historia Mamboleo Museum. There are different specialists talking about the world of art and the different program segments for the day. The sponsors for the event have also been mentioned. 
 
+The website can be viewed on a desktop or a small screen size device.
+This is the recording with the description of my Historia Summit website: https://www.loom.com/share/32ba788daa1d42afb941180eb3c243d1
 
 ## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://marlyn-mayienga.github.io/Historia_Website/)
+
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
+Run this code to set it up on you local computer: https://github.com/Marlyn-Mayienga/Historia_Website.git
 
 ### Prerequisites
+You need to have a code editor to be able to run the commands in the terminal. VSCode is most preferred.
 
 ### Setup
+You need to download the linters folder and copy it to your project.
 
 ### Install
-
-### Usage
-
-### Run tests
+You need to install the linters and the fontawesome library. (Preferred)
 
 ### Deployment
-
-
+The project was deployed to Github pages at . 
 
 ## Authors
 
-👤 **Author1**
+👤 **Marlyn Mayienga**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Marlyn_Mayienga](https://github.com/Marlyn_Mayienga)
+- Twitter: [@Merl_Mayienga](https://twitter.com/M_ayienga)
+- LinkedIn: [Marlyn_Mayienga](https://linkedin.com/in/Marlyn_Mayienga)
 
 ## 🤝 Contributing
 
@@ -64,12 +54,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- Hat tip to anyone whose design was used, Cindy Shin.
 - Inspiration
 - etc
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
