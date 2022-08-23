@@ -42,6 +42,8 @@ export const getTask = (task) => {
     const itemTrash = document.createElement('i');
     itemTrash.classList.add('fa', 'fa-trash-alt', 'item-trash');
     item.appendChild(itemTrash);
+
+    taskText.classList.toggle('done');
   } else {
     const itemDots = document.createElement('i');
     itemDots.classList.add('fa', 'fa-ellipsis-v', 'item-dots');

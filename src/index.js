@@ -1,6 +1,7 @@
 import './styles.css';
-import Task, { getTask, updateTaskCompletion } from './modules/task.js';
+import Task, { getTask } from './modules/task.js';
 import TaskStore from './modules/taskstore.js';
+import updateTaskStatus from './modules/taskstatus.js';
 
 const getTasks = () => {
   const list = document.querySelector('.list');
@@ -9,6 +10,8 @@ const getTasks = () => {
 };
 
 getTasks();
+
+updateTaskStatus();
 
 const taskForm = document.querySelector('.task-form');
 
@@ -34,38 +37,6 @@ document.querySelector('.reset-button').addEventListener('click', () => {
   document.querySelector('.add-input').value = null;
 });
 
-// DONE TASKS //
-document.querySelector('.list').addEventListener('change', (e) => {
-  if (e.target.type === 'checkbox') {
-    const checkboxIndex = e.target.dataset.index;
-    const item = document.getElementById(`item-${checkboxIndex}`);
-    const taskText = item.querySelector('p');
-
-    taskText.classList.toggle('done');
-    item.classList.toggle('item-checked');
-
-    updateTaskCompletion(checkboxIndex);
-
-    const task = TaskStore.getTaskByIndex(checkboxIndex);
-
-    const checkbox = item.querySelector('input');
-
-    const itemAction = item.querySelector('i');
-    itemAction.className = '';
-
-    if (task.completed === true) {
-      taskText.style.textDecoration = 'line-through';
-      checkbox.checked = true;
-      itemAction.classList.add('fa', 'fa-trash-alt');
-    } else {
-      taskText.style.textDecoration = 'none';
-      checkbox.checked = false;
-      const itemDots = item.querySelector('i');
-      itemDots.classList.add('fa', 'fa-ellipsis-v');
-    }
-  }
-});
-
 // --DELETE SINGLE TASK--//
 
 document.querySelector('.list').addEventListener('click', (e) => {
@@ -85,19 +56,18 @@ document.querySelector('.list').addEventListener('click', (e) => {
 
 document.querySelector('.clear-button').addEventListener('click', () => {
   const tasks = TaskStore.getTasks();
-  const doneTasks = Array.from(document.querySelectorAll('.done'));
-  doneTasks.forEach((doneTask) => doneTask.parentElement.remove());
-  const uncompletedTasks = [];
-  for (let i = 0; i < tasks.length; i += 1) {
-    if (tasks[i].completed === false) {
-      uncompletedTasks.push(tasks[i]);
-    }
-  }
+  const doneTaskElements = Array.from(document.querySelectorAll('.done'));
 
-  for (let i = 0; i < uncompletedTasks.length; i += 1) {
-    uncompletedTasks[i].index = i;
-  }
+  const doneTaskIndexes = doneTaskElements.map((doneTaskElement) => {
+    const { index } = doneTaskElement.previousElementSibling.dataset;
+    return Number(index);
+  });
+
+  const uncompletedTasks = tasks.filter((task) => !doneTaskIndexes.includes(task.index));
+
   localStorage.setItem('tasks', JSON.stringify(uncompletedTasks));
+  doneTaskElements.forEach((doneTaskElement) => doneTaskElement.parentElement.remove());
+
   getTasks();
 });
 
