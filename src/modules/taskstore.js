@@ -1,4 +1,4 @@
-export default class TaskStore {
+class TaskStore {
     static getTasks = () => {
       let tasks = [];
 
@@ -43,3 +43,5 @@ export default class TaskStore {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
+
+module.exports = TaskStore;
