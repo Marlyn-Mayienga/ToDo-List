@@ -117,3 +117,165 @@ describe('TaskStore', () => {
   });
 
 });
+
+// Unit-Test for update Compeleted Status
+describe('updateTaskStatus()', () => {
+  it('updateTaskStatus must remove tasks that are compeleted', () => {
+    const tasks = [
+      {
+        index: 1,
+        description: 'one',
+        completed: false,
+      },
+      {
+        index: 2,
+        description: 'two',
+        completed: true,
+      },
+      {
+        index: 3,
+        description: 'three',
+        completed: true,
+      },
+    ];
+
+    const expected = [
+      {
+        index: 1,
+        description: 'one',
+        completed: false,
+      },
+    ];
+    // Action
+    const output = TaskStore.removeCompletedTasks(tasks);
+    expect(output).toStrictEqual(expected);
+  });
+  it('updateTaskStatus must remove tasks that are compeleted and rearrange index', () => {
+    const tasks = [
+      {
+        index: 1,
+        description: 'one',
+        completed: true,
+      },
+      {
+        index: 2,
+        description: 'two',
+        completed: false,
+      },
+      {
+        index: 3,
+        description: 'three',
+        completed: true,
+      },
+    ];
+    const expected = [
+      {
+        index: 1,
+        description: 'two',
+        completed: false,
+      },
+    ];
+    // Action
+    const output = TaskStore.removeCompletedTasks(tasks);
+    expect(output).toStrictEqual(expected);
+  });
+});
+
+// Unit-Test for clear-all-completed
+describe('updateTask()', () => {
+  it('updateTask must update status to true', () => {
+    const tasks = [
+      {
+        index: 1,
+        description: 'one',
+        completed: false,
+      },
+      {
+        index: 2,
+        description: 'two',
+        completed: false,
+      },
+    ];
+
+    const expected = [
+      {
+        index: 1,
+        description: 'one',
+        completed: true,
+      },
+      {
+        index: 2,
+        description: 'two',
+        completed: false,
+      },
+    ];
+    // Action
+    const output = TaskStore.setTaskCompleted(1, true, tasks);
+    expect(output).toStrictEqual(expected);
+  });
+
+  it('updateTask must update status to false', () => {
+    const tasks = [
+      {
+        index: 1,
+        description: 'one',
+        completed: true,
+      },
+      {
+        index: 2,
+        description: 'two',
+        completed: false,
+      },
+    ];
+
+    const expected = [
+      {
+        index: 1,
+        description: 'one',
+        completed: false,
+      },
+      {
+        index: 2,
+        description: 'two',
+        completed: false,
+      },
+    ];
+    // Action
+    const output = TaskStore.setTaskCompleted(1, false, tasks);
+    expect(output).toStrictEqual(expected);
+  });
+});
+
+// Unit-Test for editting task
+describe('updateTask()', () => {
+  it('updateTask must update description', () => {
+    const tasks = [
+      {
+        index: 1,
+        description: 'one',
+        completed: true,
+      },
+      {
+        index: 2,
+        description: 'descriptions should not be updated',
+        completed: false,
+      },
+    ];
+
+    const expected = [
+      {
+        index: 1,
+        description: 'description updated',
+        completed: true,
+      },
+      {
+        index: 2,
+        description: 'descriptions should not be updated',
+        completed: false,
+      },
+    ];
+    // Action
+    const output = TaskStore.updateDescription(1, 'description updated', tasks);
+    expect(output).toStrictEqual(expected);
+  });
+});

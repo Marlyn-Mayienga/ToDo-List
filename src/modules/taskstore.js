@@ -42,6 +42,37 @@ class TaskStore {
       });
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
+
+    static removeCompletedTasks = (tasks) => {
+      const Tasks = tasks.filter((task) => !task.completed);
+      for (let i = 0; i < Tasks.length; i += 1) {
+        Tasks[i].index = i + 1;
+      }
+      localStorage.setItem('tasks', JSON.stringify(Tasks));
+      return Tasks;
+    }
+
+    static setTaskCompleted = (index, completed, tasks) => {
+      const updatedTasks = tasks.map((task) => {
+        if (task.index === index) {
+          return { ...task, completed };
+        }
+        return task;
+      }).map((task, index) => ({ ...task, index: index + 1 }));
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
+    }
+
+    static updateDescription = (index, description, tasks) => {
+      const updatedTasks = tasks.map((task) => {
+        if (task.index === index) {
+          return { ...task, description };
+        }
+        return task;
+      }).map((task, index) => ({ ...task, index: index + 1 }));
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
+    }
 }
 
 module.exports = TaskStore;
