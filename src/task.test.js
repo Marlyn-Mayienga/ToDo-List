@@ -125,17 +125,17 @@ describe('updateTaskStatus()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: false,
+        completed: false,
       },
       {
         index: 2,
         description: 'two',
-        isCompeleted: true,
+        completed: true,
       },
       {
         index: 3,
         description: 'three',
-        isCompeleted: true,
+        completed: true,
       },
     ];
 
@@ -143,11 +143,11 @@ describe('updateTaskStatus()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: false,
+        completed: false,
       },
     ];
     // Action
-    const output = TaskStore.updateTaskStatus(tasks);
+    const output = TaskStore.removeCompletedTasks(tasks);
     expect(output).toStrictEqual(expected);
   });
   it('updateTaskStatus must remove tasks that are compeleted and rearrange index', () => {
@@ -155,28 +155,28 @@ describe('updateTaskStatus()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: true,
+        completed: true,
       },
       {
         index: 2,
         description: 'two',
-        isCompeleted: false,
+        completed: false,
       },
       {
         index: 3,
         description: 'three',
-        isCompeleted: true,
+        completed: true,
       },
     ];
     const expected = [
       {
         index: 1,
         description: 'two',
-        isCompeleted: false,
+        completed: false,
       },
     ];
     // Action
-    const output = TaskStore.getTasks(tasks);
+    const output = TaskStore.removeCompletedTasks(tasks);
     expect(output).toStrictEqual(expected);
   });
 });
@@ -188,12 +188,12 @@ describe('updateTask()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: false,
+        completed: false,
       },
       {
         index: 2,
         description: 'two',
-        isCompeleted: false,
+        completed: false,
       },
     ];
 
@@ -201,29 +201,30 @@ describe('updateTask()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: true,
+        completed: true,
       },
       {
         index: 2,
         description: 'two',
-        isCompeleted: false,
+        completed: false,
       },
     ];
     // Action
-    const output = TaskStore.updateTask(1, true, tasks);
+    const output = TaskStore.setTaskCompleted(1, true, tasks);
     expect(output).toStrictEqual(expected);
   });
+
   it('updateTask must update status to false', () => {
     const tasks = [
       {
         index: 1,
         description: 'one',
-        isCompeleted: true,
+        completed: true,
       },
       {
         index: 2,
         description: 'two',
-        isCompeleted: false,
+        completed: false,
       },
     ];
 
@@ -231,16 +232,16 @@ describe('updateTask()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: false,
+        completed: false,
       },
       {
         index: 2,
         description: 'two',
-        isCompeleted: false,
+        completed: false,
       },
     ];
     // Action
-    const output = TaskStore.updateTask(1, false, tasks);
+    const output = TaskStore.setTaskCompleted(1, false, tasks);
     expect(output).toStrictEqual(expected);
   });
 });
@@ -252,12 +253,12 @@ describe('updateTask()', () => {
       {
         index: 1,
         description: 'one',
-        isCompeleted: true,
+        completed: true,
       },
       {
         index: 2,
         description: 'descriptions should not be updated',
-        isCompeleted: false,
+        completed: false,
       },
     ];
 
@@ -265,16 +266,16 @@ describe('updateTask()', () => {
       {
         index: 1,
         description: 'description updated',
-        isCompeleted: true,
+        completed: true,
       },
       {
         index: 2,
         description: 'descriptions should not be updated',
-        isCompeleted: false,
+        completed: false,
       },
     ];
     // Action
-    const output = TaskStore.updateTask(1, 'description updated', tasks);
+    const output = TaskStore.updateDescription(1, 'description updated', tasks);
     expect(output).toStrictEqual(expected);
   });
 });
